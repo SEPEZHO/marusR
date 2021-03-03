@@ -1,0 +1,49 @@
+@import 'src/Style/MainVar.sass'
+
+.LinksContainer
+  float: left
+  display: flex
+  flex-direction: column
+  width: 45px
+  margin-right: 40px
+  span
+    font-size: 25px
+    margin-right: 12px 
+    margin-bottom: 4px
+    transition: .2s
+
+.activeImg
+  transition: 0s
+  @media screen and (min-width: 950px)
+    animation: rotate3d 5s linear
+  @media screen and (max-width: 950px)
+    animation: rotate3dsec 5s linear
+
+@keyframes rotate3d
+  from
+    transform: rotate3d(0, 1, 0, 0)
+
+  50%
+    transform: rotate3d(0, 1, 0, 180deg)
+
+  to
+    transform: rotate3d(0, 1, 0, 360deg)
+
+@keyframes rotate3dsec
+  from
+    transform: rotate3d(1, 0, 0, 0) rotate(-90deg)
+
+  50%
+    transform: rotate3d(1, 0, 0, 180deg) rotate(-90deg)
+
+  to
+    transform: rotate3d(1, 0, 0, 360deg) rotate(-90deg)
+
+@media screen and (max-width: 950px)
+  .LinksContainer
+    width: 34px
+    margin: 0 0 -100px 0
+    flex-direction: column-reverse
+    transform: rotate(90deg)
+    span
+      transform: rotate(-90deg)
